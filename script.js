@@ -19,3 +19,14 @@ function generateRandomNumbers() {
         errorElement.innerText = '';
     }
 }
+
+function copyToClipboard() {
+    const resultList = document.getElementById('resultList');
+    const range = document.createRange();
+    range.selectNode(resultList);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert('Copied to clipboard!');
+}
